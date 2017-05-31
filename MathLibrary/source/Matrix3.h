@@ -60,7 +60,7 @@ public:
 
     // + operator with scalar
     Matrix3 Matrix3::operator + (const float& scalar);
-    Matrix3 Matrix3::operator += (const float& scalar);
+    void Matrix3::operator += (const float& scalar);
 
 
     //square bracket operator overload to get a row

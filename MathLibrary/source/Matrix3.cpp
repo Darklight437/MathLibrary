@@ -147,9 +147,10 @@ Matrix3 Matrix3::operator + (const float& scalar)
     {
         temp.u.M3[i] = u.M3[i] + scalar;
     }
+    return temp;
 }
 
-Matrix3 Matrix3::operator += (const float& scalar)
+void Matrix3::operator += (const float& scalar)
 {
     *this = *this + scalar;
 }
