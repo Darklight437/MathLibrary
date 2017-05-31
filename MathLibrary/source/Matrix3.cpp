@@ -48,6 +48,7 @@ void Matrix3::setRotateZ(float rot)
     u.z2 = 0;
     u.z3 = 1;
 }
+//* with a vector
 
 Vector3 Matrix3::operator *(Vector3 rhs)
 {
@@ -58,6 +59,8 @@ Vector3 Matrix3::operator *(Vector3 rhs)
     return intVect;
 }
 
+
+//* with a matrix
 Matrix3 Matrix3::operator *(Matrix3 rhs)
 {
 
@@ -103,6 +106,10 @@ Matrix3 Matrix3::operator *(Matrix3 rhs)
     return IntMat;
 }
 
+
+
+
+
 Matrix3 & Matrix3::operator =(const Matrix3 & other)
 {
     if (&other != this) // Prevent self-assignment
@@ -131,6 +138,23 @@ Vector3& Matrix3::operator[](int input)
     }
     
 }
+
+Matrix3 Matrix3::operator + (const float& scalar)
+{
+
+    Matrix3 temp;
+    for ( unsigned int i = 0; i < 9; i++)
+    {
+        temp.u.M3[i] = u.M3[i] + scalar;
+    }
+}
+
+Matrix3 Matrix3::operator += (const float& scalar)
+{
+    *this = *this + scalar;
+}
+
+
 
 Matrix3 Matrix3::identity()
 {
