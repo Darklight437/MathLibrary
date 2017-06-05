@@ -160,7 +160,7 @@ Matrix3 Matrix3::operator * (float rhs)
     Matrix3 temp(* this);
     for (int i = 0; i < 9; i++)
     {
-         temp.u.M3[i] * rhs;
+         temp.u.M3[i] *= rhs;
     }
     return temp;
 
